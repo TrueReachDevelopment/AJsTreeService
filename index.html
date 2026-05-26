@@ -5,6 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AJ's Tree Service | Screven, GA</title>
     <meta name="description" content="Professional tree trimming, removal, land clearing, and stump grinding in Screven, GA and surrounding areas. Available 24/7 for emergencies. Call (912) 424-1991.">
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%232d673e' stroke-width='1.5'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' d='M12 3c-1.5 3-4 5-6 6 1 1 2.5 2 4 2.5C9 13 8 15 7 17h10c-1-2-2-4-3-5.5 1.5-.5 3-1.5 4-2.5-2-1-4.5-3-6-6z'/%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' d='M12 17v4'/%3E%3C/svg%3E">
+    <meta property="og:title" content="AJ's Tree Service | Screven, GA">
+    <meta property="og:description" content="Professional tree trimming, removal, land clearing, and stump grinding. Family-owned, available 24/7. Call (912) 424-1991 for a free estimate.">
+    <meta property="og:image" content="https://images.unsplash.com/photo-1542273917363-3b1817f69a2d?auto=format&fit=crop&w=1200&q=80">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -105,6 +111,28 @@
 
         .mobile-menu { max-height: 0; overflow: hidden; transition: max-height 0.3s ease; }
         .mobile-menu.open { max-height: 400px; }
+
+        /* Smooth scroll offset for fixed nav */
+        [id] { scroll-margin-top: 80px; }
+
+        /* Floating mobile CTA */
+        .mobile-cta {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 40;
+            width: 56px;
+            height: 56px;
+            background: linear-gradient(135deg, #2d673e 0%, #3d8050 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 20px rgba(45, 103, 62, 0.45);
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        .mobile-cta:hover { transform: scale(1.08); box-shadow: 0 6px 28px rgba(45, 103, 62, 0.55); }
+        @media (min-width: 768px) { .mobile-cta { display: none; } }
     </style>
 </head>
 <body class="bg-bark-50 text-bark-900 font-body antialiased">
@@ -294,7 +322,7 @@
                 <p class="text-bark-600 text-base sm:text-lg" style="line-height: 1.7;">Real jobs, real results from our recent projects across southeast Georgia.</p>
             </div>
 
-            <div class="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 gap-2 sm:gap-3 max-w-4xl mx-auto">
+            <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3 sm:gap-3 max-w-4xl mx-auto">
                 <div class="gallery-item relative rounded-lg overflow-hidden aspect-square group cursor-pointer border-2 border-bark-200 hover:border-forest-400">
                     <img src="images/bucket-truck.jpg" alt="Bucket truck for high tree work" class="w-full h-full object-cover" loading="lazy">
                     <div class="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
@@ -527,7 +555,7 @@
                 (912) 424-1991
             </a>
 
-            <div class="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8 max-w-2xl mx-auto">
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-8 max-w-2xl mx-auto">
                 <div class="bg-white/10 backdrop-blur-sm rounded-xl p-5 border border-white/15">
                     <p class="text-forest-400 text-xs font-semibold tracking-widest uppercase mb-2">Address</p>
                     <p class="text-bark-200 text-sm" style="line-height: 1.7;">1809 Dixie Rd<br>Screven, GA 31560</p>
@@ -555,17 +583,28 @@
                     </svg>
                     <span class="font-display text-bark-300 text-base">AJ's Tree Service</span>
                 </div>
-                <p class="text-bark-600 text-xs">Serving Screven, Jesup &amp; Wayne County, Georgia</p>
+                <p class="text-bark-600 text-xs">Serving Screven, Jesup &amp; Wayne County, Georgia &middot; &copy; 2025</p>
             </div>
         </div>
     </footer>
 
+    <!-- Floating Mobile Call Button -->
+    <a href="tel:9124241991" class="mobile-cta" aria-label="Call AJ's Tree Service">
+        <svg class="w-6 h-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 6.75c0 8.284 6.716 15 15 15h2.25a2.25 2.25 0 002.25-2.25v-1.372c0-.516-.351-.966-.852-1.091l-4.423-1.106c-.44-.11-.902.055-1.173.417l-.97 1.293c-.282.376-.769.542-1.21.38a12.035 12.035 0 01-7.143-7.143c-.162-.441.004-.928.38-1.21l1.293-.97c.363-.271.527-.734.417-1.173L6.963 3.102a1.125 1.125 0 00-1.091-.852H4.5A2.25 2.25 0 002.25 4.5v2.25z"/></svg>
+    </a>
+
     <script>
         const menuBtn = document.getElementById('menuBtn');
         const mobileMenu = document.getElementById('mobileMenu');
-        menuBtn.addEventListener('click', () => { mobileMenu.classList.toggle('open'); });
+        menuBtn.addEventListener('click', (e) => { e.stopPropagation(); mobileMenu.classList.toggle('open'); });
         document.querySelectorAll('#mobileMenu a').forEach(link => {
             link.addEventListener('click', () => { mobileMenu.classList.remove('open'); });
+        });
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!mobileMenu.contains(e.target) && !menuBtn.contains(e.target)) {
+                mobileMenu.classList.remove('open');
+            }
         });
     </script>
 </body>
